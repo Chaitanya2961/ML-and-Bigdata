@@ -40,16 +40,16 @@ Run the notebooks **in order**; each one reads the previous one's outputs.
 ## 5. Pipeline
 ```mermaid
 flowchart LR
-  A[NOAA yearly tar.gz] to B[CSV files]
-  B -->|explicit string schema, try_cast| C[Parquet partitioned by YEAR]
-  C --> D[Sentinels -> null, range checks, dropDuplicates]
-  D -->|repartition by STATION| E[Window features: lag, 3-day rolling, pressure tendency]
-  E --> F[Label = tomorrow is extreme]
-  F --> G[Feature table Parquet]
-  G --> H[Pipeline: StringIndexer -> OneHotEncoder -> Imputer -> VectorAssembler -> StandardScaler]
-  H --> I[LR / DT / RF / GBT + CrossValidator, class weights, PR-AUC]
-  I --> J[Evaluation, stability, SHAP]
-  J --> K[Tableau extracts -> 4 dashboards]
+  A[NOAA yearly tar.gz] --> B[CSV files]
+  B --> C[Parquet partitioned by YEAR]
+  C --> D[Cleaning: sentinels to null, range checks, duplicates removed]
+  D --> E[Window features per station: lag, 3-day rolling, pressure change]
+  E --> F[Label: tomorrow is extreme]
+  F --> G[Feature table]
+  G --> H[Pipeline: StringIndexer, OneHotEncoder, Imputer, VectorAssembler, StandardScaler]
+  H --> I[Models: LR, Decision Tree, Random Forest, GBT with CrossValidator]
+  I --> J[Evaluation, stability and SHAP]
+  J --> K[Tableau dashboards]
 ```
 
 ## 6. Results
