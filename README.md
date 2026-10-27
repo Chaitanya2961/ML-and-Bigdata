@@ -52,14 +52,15 @@ flowchart LR
   J --> K[Tableau extracts -> 4 dashboards]
 ```
 
-## 6. Results (fill in from Task 3 / Task 5)
-| Model | Key hyperparameters | Train time (s) | PR-AUC | ROC-AUC | Recall | Precision | F1 |
-|---|---|---|---|---|---|---|---|
-| Persistence (naive) | – | 0 | – | – | | | |
-| Logistic Regression | | | | | | | |
-| Decision Tree | | | | | | | |
-| Random Forest | | | | | | | |
-| GBT | | | | | | | |
+## 6. Results
+I tested all four models on the 2023 data. Only around 15% of days were extreme, so I mainly looked at PR-AUC rather than accuracy.
+
+Logistic Regression: PR-AUC=0.6841, trained in 27.2s
+Decision Tree: PR-AUC=0.6506, trained in 11.0s
+Random Forest:  PR-AUC=0.7203, trained in 17.9s
+GBT: PR-AUC=0.7469, trained in 49.2s
+
+GBT gave the best PR-AUC, but it took the longest to train. Random Forest came second and trained in about a third of the time, so it is a good option if training time matters.
 
 ## 7. Version control log
 Each commit names the task, what changed, and the main PySpark method used, for example:
