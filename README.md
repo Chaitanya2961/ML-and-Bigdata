@@ -1,8 +1,8 @@
 # Next-Day Extreme Weather Warning with PySpark: NOAA GSOD 2020 to 2023
 
 **Module:** 7006SCN Machine Learning and Big Data (Coventry University)
-**Author:** Perli Sri Chaitanya (SID:)
-**Tableau Public workbook:** 
+**Author:** Perli Sri Chaitanya (SID: 16815878)
+**Tableau Public workbook:** : https://public.tableau.com/app/profile/perlis.coventry/viz/7006SCNExtremeWeather/Pipelinefunnel#1
 
 ## 1. Problem
 Predict whether a weather station will record an **extreme weather day tomorrow**, using only today's and recent observations.
