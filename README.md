@@ -67,7 +67,7 @@ Each commit names the task, what changed, and the main PySpark method used, for 
 "task2: convert sentinel codes to null (when/otherwise)".
 
 ## 8. AI use
-Notebook code was generated with Claude (Anthropic) and then run, checked and adapted by me; Claude was also used for debugging and to draft documentation. See the AI-use declaration in the report.
+Claude was used for debugging, conceptual clarity and to draft documentation. See the AI use declaration in the report.
 
 ## 9. References
 NOAA NCEI (2024) *Global Surface Summary of the Day GSOD*. Apache Spark (2024) *MLlib guide*. Lundberg & Lee (2017) *A unified approach to interpreting model predictions*, NeurIPS.
